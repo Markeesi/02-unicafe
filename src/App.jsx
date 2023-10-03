@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Button from './components/Button/Button'
 import Statistics from './components/Statistics/Statistics'
+import Anecdotes from './components/Anecdotes/Anecdotes'
 
 const App = () => {
   // tallenna napit omaan tilaansa
@@ -28,6 +29,7 @@ const App = () => {
       <h1>statistics</h1>
       { all <= 0 ? <p>No feedback given </p> :
         <Statistics good={good} bad={bad} neutral={neutral} all={all} average={average} positive={positive} />}
+      <Anecdotes />
     </>
   )
 }
