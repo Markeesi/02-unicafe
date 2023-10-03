@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Button from './components/Button/Button'
+import Statistics from './components/Statistics/Statistics'
 
 const App = () => {
   // tallenna napit omaan tilaansa
@@ -23,16 +24,9 @@ const App = () => {
       <Button handleClick={goodCounter} text="good" />
       <Button handleClick={neutralCounter} text="neutral" />
       <Button handleClick={badCounter} text="bad" />
-    </div>
-    <div>
-      <h1>statistics</h1>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {all}</p>
-      <p>average {average}</p>
-      <p>positive {positive} %</p>
-    </div>
+      </div>
+      { all <= 0 ? <p>No feedback given </p> :
+        <Statistics good={good} bad={bad} neutral={neutral} all={all} average={average} positive={positive} />}
     </>
   )
 }
